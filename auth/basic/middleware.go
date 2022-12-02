@@ -45,6 +45,7 @@ func parseBasicAuth(auth string) (username, password []byte, ok bool) {
 	if !strings.HasPrefix(auth, prefix) {
 		return
 	}
+	// 一行代码获取Basic 后的内容
 	c, err := base64.StdEncoding.DecodeString(auth[len(prefix):])
 	if err != nil {
 		return
